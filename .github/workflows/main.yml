@@ -1,0 +1,52 @@
+name: Build & OpenAPI Codegen
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set gradlew as executable
+        run: chmod +x ./gradlew
+
+      - name: Ensure PowerShell Core (pwsh) is installed
+        run: sudo apt-get install -y powershell
+
+      - name: Generate OpenAPI clients (Kotlin, Java, TypeScript)
+        run: pwsh ./generate-apis.ps1 -Target all
+        # Adjust path if generate-apis.ps1 is in a subfolder
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Run tests
+        run: ./gradlew test
+
+      # Optional: Upload generated clients as artifacts
+      - name: Upload Generated Clients
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-clients
+          path: |
+            app/build/generated/source/openapi/
+            app/build/generated/typescript/
+            app/build/generated/java/
