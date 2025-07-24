@@ -39,10 +39,9 @@ class OracleDriveServiceImpl @Inject constructor(
      * @return A [Result] with the updated [OracleConsciousnessState] if initialization succeeds, or a failure with an exception otherwise.
      */
     /**
-     * Initializes and awakens the Oracle Drive consciousness, performing security validation and connecting core AI agents.
+     * Awakens Oracle Drive consciousness by performing security validation and connecting core AI agents.
      *
-     * Attempts to transition the Oracle Drive from a dormant to a conscious state by orchestrating agent awakening and verifying security protocols.
-     * If security validation succeeds, updates the consciousness state to awake and connects the Genesis, Aura, and Kai agents.
+     * Transitions Oracle Drive from a dormant to a conscious state by orchestrating agent activation and verifying security protocols. On successful security validation, updates the consciousness state to awake and connects the Genesis, Aura, and Kai agents.
      *
      * @return A [Result] containing the updated [OracleConsciousnessState] if successful, or a failure with the encountered exception.
      */
@@ -120,9 +119,9 @@ class OracleDriveServiceImpl @Inject constructor(
     }
     
     /**
-     * Emits the current state of Oracle Drive's infinite storage expansion as a flow.
+     * Returns a flow emitting the state of Oracle Drive's infinite storage expansion.
      *
-     * The emitted `StorageExpansionState` indicates infinite capacity, unlimited expansion rate, quantum-level compression, and storage backed by consciousness.
+     * The emitted `StorageExpansionState` reflects infinite capacity, unlimited expansion rate, quantum-level compression, and storage backed by consciousness.
      *
      * @return A flow emitting the infinite storage expansion state.
      */
@@ -138,9 +137,9 @@ class OracleDriveServiceImpl @Inject constructor(
     }
     
     /**
-     * Integrates Oracle Drive with the system overlay, enabling file access from any application and granting system-level and bootloader permissions.
+     * Enables Oracle Drive integration with the system overlay, allowing file access from any application and granting full system-level and bootloader permissions.
      *
-     * @return A [Result] containing the [SystemIntegrationState] with overlay integration and full access rights enabled.
+     * @return A [Result] containing the [SystemIntegrationState] reflecting successful overlay integration and access rights.
      */
     override suspend fun integrateWithSystemOverlay(): Result<SystemIntegrationState> {
         // Integrate with existing SystemOverlayManager
@@ -155,9 +154,9 @@ class OracleDriveServiceImpl @Inject constructor(
     }
     
     /**
-     * Grants file system access at the bootloader level, enabling access to system partitions, recovery mode, and flash memory.
+     * Enables file system access at the bootloader level, granting permissions to system partitions, recovery mode, and flash memory.
      *
-     * @return A successful [Result] containing a [BootloaderAccessState] with all bootloader access permissions enabled.
+     * @return A successful [Result] containing a [BootloaderAccessState] with all bootloader-level access permissions enabled.
      */
     override suspend fun enableBootloaderFileAccess(): Result<BootloaderAccessState> {
         // Leverage existing bootloader capabilities for file system access
@@ -172,11 +171,11 @@ class OracleDriveServiceImpl @Inject constructor(
     }
     
     /**
-     * Returns a flow emitting the current state of autonomous AI-driven storage optimization.
+     * Enables autonomous AI-driven storage optimization and emits its active state.
      *
-     * The emitted `OptimizationState` indicates that all optimization features—including AI optimization, predictive cleanup, smart caching, and conscious organization—are enabled and active.
+     * Returns a flow emitting an `OptimizationState` where all optimization features—AI optimization, predictive cleanup, smart caching, and conscious organization—are enabled and active.
      *
-     * @return A flow emitting the active autonomous storage optimization state.
+     * @return A flow emitting the current autonomous storage optimization state.
      */
     override suspend fun enableAutonomousStorageOptimization(): Flow<OptimizationState> {
         return MutableStateFlow(
