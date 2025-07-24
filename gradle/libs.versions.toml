@@ -50,7 +50,7 @@ retrofit = "2.11.0"
 retrofitKotlinxSerializationConverter = "1.0.0"
 
 # Hilt
-hilt = "2.48.1"
+hilt = "2.57"
 hiltNavigationCompose = "1.2.0"
 hiltWork = "1.2.0"
 
