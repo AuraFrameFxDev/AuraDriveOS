@@ -40,7 +40,7 @@ junitApi = "5.10.2"
 espresso = "3.6.1"
 mockk = "1.13.13"
 truth = "1.4.4"
-desugarJdkLibs = "2.1.4"
+desugarJdkLibs = "2.1.5"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
