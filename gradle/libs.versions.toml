@@ -7,7 +7,7 @@ javaVersion = "21"
 
 # Plugin versions
 agp = "8.7.3"
-kotlin = "2.1.0"
+kotlin = "2.2.0"
 ksp = "2.1.0-1.0.29"
 composeCompiler = "1.5.15"
 hilt = "2.52"
